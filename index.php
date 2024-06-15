@@ -46,7 +46,7 @@
         $dir = 'videos/';
         $files = scandir($dir);
         foreach ($files as $file) {
-            if ($file !== '.' && $file !== '..') {
+            if ($file !== '.' && $file !== '..' && preg_match('/\.(mp4|webm|ogg)$/i', $file)) {
                 echo "<li><a href=\"#\" onclick=\"playVideo('$dir$file')\">$file</a></li>";
             }
         }
